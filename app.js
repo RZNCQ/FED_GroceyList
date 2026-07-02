@@ -11,6 +11,22 @@ app.get("/items", (req, res) => {
   res.json(groceryList);
 });
 
+app.post('/items', (req, res) => {
+  let newItem = {
+    id: Date.now(),
+    name: req.body.name,
+    completed: false
+  };
+  groceryList.push(newItem);
+  res.status(201).json(newItem); 
+});
+
+app.delete('/items/:id', (req, res) => {
+  let id = parseInt(req.params.id);
+  groceryList = groceryList.filter(i => i.id !== id);
+  res.json({ message: 'Deleted successfully'});
+});
+
 
 
 
