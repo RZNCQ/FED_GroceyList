@@ -14,10 +14,8 @@
             Grocery List
         </h1>
         <div class="flex gap-2 mb-4">
-            <input id="inputItem" type="text" placeholder="Enter An Item.."
-                class="border border-black p-3 flex-grow rounded">
-            <button onclick="addItem()"
-                class="bg-green-600 hover:bg-green-400 text-white px-5 py-3 rounded">Add</button>
+            <input id="inputItem" type="text" placeholder="Enter An Item.." class="border border-black p-3 flex-grow rounded">
+            <button onclick="addItem()"class="bg-green-600 hover:bg-green-400 text-white px-5 py-3 rounded">Add</button>
         </div>
         <ul id="list" class="space-y-2">
             <li class="flex justify-between items-center p-2 border border-gray-400">
@@ -25,14 +23,29 @@
                     <input type="checkbox">
                     <span>Apple</span>
                 </div>
+                <button onclick="" class="text-red-500">Delete</button>                
             </li>
             <li class="flex justify-between items-center p-2 border border-gray-400">
                 <div class = "flex items-center gap-3">
                     <input type="checkbox">
                     <span>Grape</span>
                 </div>
+                <button onclick="" class="text-red-500">Delete</button>
             </li>
         </ul>
     </div>
 </body>
+<script>
+    async function addItem() {
+        let input = document.getElementById('inputItem');
+        if (!input.value) return;
+
+        await fetch('/items', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: input.value })
+        });
+        input.value = '';
+    }
+</script>
 </html>
