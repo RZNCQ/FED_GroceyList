@@ -30,7 +30,7 @@
                     <input type="checkbox">
                     <span>Grape</span>
                 </div>
-                <button onclick="" class="text-red-500">Delete</button>
+                <button onclick="deleteItem()" class="text-red-500">Delete</button>
             </li>
         </ul>
     </div>
@@ -46,6 +46,12 @@
             body: JSON.stringify({ name: input.value })
         });
         input.value = '';
+    }
+
+    async function deleteItem(id) {
+        await fetch(`/items/${id}`, {
+            method: 'DELETE'
+        });
     }
 </script>
 </html>
