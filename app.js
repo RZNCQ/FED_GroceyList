@@ -22,7 +22,7 @@ app.post("/items", (req, res) => {
 });
 
 app.put("/items/:id", (req, res) => {
-  let id = parseInt(req.params.id);
+  let id = Number(req.params.id);
   let index = groceryList.findIndex((i) => i.id === id);
 
   if (index !== -1) {

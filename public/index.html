@@ -32,7 +32,7 @@
             li.innerHTML =
                 `
                 <div class = "flex items-center gap-3">
-                    <input id="${item.id}" type="checkbox" onchange="updateStatus(${item.id})">
+                    <input id="${item.id}" type="checkbox" ${item.completed ? "checked" : ""} onchange="updateStatus(${item.id})">
                     <span>${item.name}</span>
                 </div>
                 <button onclick="deleteItem(${item.id})" class="text-red-500">Delete</button>
