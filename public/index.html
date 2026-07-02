@@ -32,7 +32,7 @@
             li.innerHTML =
                 `
                 <div class = "flex items-center gap-3">
-                    <input type="checkbox">
+                    <input id="${item.id} "type="checkbox" onchange="updateStatus(${item.id})">
                     <span>${item.name}</span>
                 </div>
                 <button onclick="deleteItem(${item.id})" class="text-red-500">Delete</button>
@@ -51,6 +51,19 @@
             body: JSON.stringify({ name: input.value })
         });
         input.value = '';
+        retrieveItems();
+    }
+
+    async function updateStatus(id) {
+        let checkBox = document.getElementById(id);
+
+        await fetch(`/items/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({completed: checkBox.checked})
+        });
         retrieveItems();
     }
 
