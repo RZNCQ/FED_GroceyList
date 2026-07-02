@@ -32,7 +32,7 @@
             li.innerHTML =
                 `
                 <div class = "flex items-center gap-3">
-                    <input id="${item.id}" type="checkbox" ${item.completed ? "checked" : ""} onchange="updateStatus(${item.id})">
+                    <input id="${item.id}" type="checkbox" ${item.completed ? "checked" : ""} onchange="updateStatus(${item.id}, this.checked)">
                     <span>${item.name}</span>
                 </div>
                 <button onclick="deleteItem(${item.id})" class="text-red-500">Delete</button>
@@ -54,7 +54,7 @@
         retrieveItems();
     }
 
-    async function updateStatus(id) {
+    async function updateStatus(id,checked) {
         let checkBox = document.getElementById(id);
 
         await fetch(`/items/${id}`, {
@@ -62,7 +62,7 @@
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({completed: checkBox.checked})
+            body: JSON.stringify({completed})
         });
         retrieveItems();
     }
