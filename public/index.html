@@ -43,7 +43,7 @@
     retrieveItems();
     async function addItem() {
         let input = document.getElementById('inputItem');
-        if (!input.value) return;
+        if (!input.value.trim()) return;
 
         await fetch('/items', {
             method: 'POST',
