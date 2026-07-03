@@ -14,10 +14,13 @@
             Grocery List
         </h1>
         <div class="flex gap-2 mb-4">
-            <input id="inputItem" type="text" placeholder="Enter An Item.." class="border border-black p-3 flex-grow rounded">
+            <input id="inputItem" type="text" placeholder="Enter An Item.."class="border border-black p-3 flex-grow rounded">
             <button onclick="addItem()"class="bg-green-600 hover:bg-green-400 text-white px-5 py-3 rounded">Add</button>
         </div>
         <ul id="list" class="space-y-2"></ul>
+        <div class="flex items-center gap-3">
+            <p id="errMsg" class="text-red-500 text-sm hidden mt-1 mb-4">Please enter an item first!</p>
+        </div>
     </div>
 </body>
 <script>
@@ -32,8 +35,7 @@
             li.innerHTML =
                 `
                 <div class = "flex items-center gap-3">
-                    <input id="${item.id}" type="checkbox" ${item.completed ? "checked" : ""} onchange="updateStatus(${item.id}, this.checked)">
-                    <span>${item.name}</span>
+                    <input id="${item.id}" type="checkbox" ${item.completed ? "checked" : ""} onchange="updateStatus(${item.id}, this.checked)">                    <span>${item.name}</span>
                 </div>
                 <button onclick="deleteItem(${item.id})" class="text-red-500 hover:text-red-700">Delete</button>
             `;
@@ -43,7 +45,11 @@
     retrieveItems();
     async function addItem() {
         let input = document.getElementById('inputItem');
-        if (!input.value.trim()) return;
+        let errMsg = document.getElementById('errMsg');
+        if (!input.value.trim()) {
+            errorMsg.classList.remove('hidden');
+            return;
+        }
 
         await fetch('/items', {
             method: 'POST',
@@ -54,7 +60,7 @@
         retrieveItems();
     }
 
-    async function updateStatus(id,checked) {
+    async function updateStatus(id, checked) {
         let checkBox = document.getElementById(id);
 
         await fetch(`/items/${id}`, {
@@ -62,7 +68,7 @@
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({completed: checked})
+            body: JSON.stringify({ completed: checked })
         });
         retrieveItems();
     }
@@ -74,4 +80,5 @@
         retrieveItems();
     }
 </script>
+
 </html>
