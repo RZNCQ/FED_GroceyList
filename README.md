@@ -13,12 +13,6 @@ This application is designed for anyone who wants a quick and convenient way to 
 -As a Shopper, I want to be able to unmark the items if i accidentally press the wrong one.
 - As a shopper, I want to delete grocery items so that I can remove items I no longer need.
 
-Figma Wireframe: https://www.figma.com/design/y3YkS0OmFBP8hZjgcoyrq1/grocerylist?node-id=0-1&t=mCmtdYAMwU3S9PbX-1
-
-GitHub Repository: https://github.com/RZNCQ/FED_GroceyList
-
-Live Demo (Render): https://fed-groceylist.onrender.com
-
 ## Features
 
 This application provides a simple interface for managing grocery items through a RESTful API.
@@ -101,6 +95,13 @@ Used to build the RESTful API and serve static frontend files.
 
 ### Media
 - No external images or media were used in this project.
+
+### Links
+Figma Wireframe: https://www.figma.com/design/y3YkS0OmFBP8hZjgcoyrq1/grocerylist?node-id=0-1&t=mCmtdYAMwU3S9PbX-1
+
+GitHub Repository: https://github.com/RZNCQ/FED_GroceyList
+
+Live Demo (Render): https://fed-groceylist.onrender.com
 
 ### Acknowledgements
 
