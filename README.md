@@ -18,21 +18,21 @@ This application is designed for anyone who wants a quick and convenient way to 
 This application provides a simple interface for managing grocery items through a RESTful API.
  
 ### Existing Features
--Add Item – allows users to add new grocery items to the shopping list.
+- Add Item – allows users to add new grocery items to the shopping list.
 
--View Items – displays all grocery items currently stored in the application.
+- View Items – displays all grocery items currently stored in the application.
 
--Mark Item – allows users to mark grocery items as completed using a checkbox.
+- Mark Item – allows users to mark grocery items as completed using a checkbox.
 
--Unmark Item - allows users to unmark grocery items in case user accidentally check it.
+- Unmark Item - allows users to unmark grocery items in case user accidentally check it.
 
--Delete Item – allows users to remove grocery items from the list.
+- Delete Item – allows users to remove grocery items from the list.
 
--Input Validation – prevents users from submitting empty grocery items by displaying an error message.
+- Input Validation – prevents users from submitting empty grocery items by displaying an error message.
 
--Responsive Layout – provides a user-friendly interface across desktop and mobile devices.
+- Responsive Layout – provides a user-friendly interface across desktop and mobile devices.
 
--Easy to use- Allows Desktop User to press enter after typing the item in the input box so that user dont need to use mouse to press add button.
+- Easy to use- Allows Desktop User to press enter after typing the item in the input box so that user dont need to use mouse to press add button.
 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
