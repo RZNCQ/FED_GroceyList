@@ -14,7 +14,9 @@ This application is designed for anyone who wants a quick and convenient way to 
 - As a shopper, I want to delete grocery items so that I can remove items I no longer need.
 
 Figma Wireframe: https://www.figma.com/design/y3YkS0OmFBP8hZjgcoyrq1/grocerylist?node-id=0-1&t=mCmtdYAMwU3S9PbX-1
+
 GitHub Repository: https://github.com/RZNCQ/FED_GroceyList
+
 Live Demo (Render): https://fed-groceylist.onrender.com
 
 ## Features
